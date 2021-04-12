@@ -16,7 +16,7 @@ class GRDImporterPanel(GRDUIPanelTemplate):
     def draw(self, context):
         """ Panel rendering """
         layout = self.layout
-        layout.operator("import_file.import_grd_file_dialog")
+        layout.operator("import_file.import_grd_file")
     
     
         
