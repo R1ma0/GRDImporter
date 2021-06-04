@@ -1,40 +1,38 @@
-# Add-on information
+### ADD-ON INFORMATION
+
 bl_info = {
     "name": "GRD File Importer",
     "author": "Abdrazackov Damir",
-    "description": "Import Format Files .grd",
-    "version": (0, 5, 0),
+    "description": "Import Format Files .GRD",
+    "version": (1, 0, 0),
     "blender": (2, 91, 2),
     "location": "View3D > Sidebar > GRD File Importer", 
     "category": "Object",
     "support": "COMMUNITY"
 }
 
+### IMPORTS
 
-
-# Imports
 if "bpy" in locals():
     import importlib
-    importlib.reload(ui)
-    importlib.reload(import_dialog)
+    importlib.reload(grd_importer-ui)
+    importlib.reload(grd_importer-main)
 else:
     import bpy
-    from . import ui
-    from . import import_dialog
+    from . import grd_importer-ui
+    from . import grd_importer-main
 
+### REG- & UNREGISTRATION 
 
-
-# Registering modules
 def register():
-    ui.register()
-    import_dialog.register()
+    grd_importer-ui.register()
+    grd_importer-main.register()
 
-# Unregistering modules
 def unregister():
-    ui.unregister()
-    import_dialog.unregister()
+    grd_importer-ui.unregister()
+    grd_importer-main.unregister()
 
-
+### LAUNCH POINT
 
 if __name__ == "__main__":
     try:
