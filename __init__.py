@@ -4,33 +4,33 @@ bl_info = {
     "name": "GRD File Importer",
     "author": "Abdrazackov Damir",
     "description": "Import Format Files .GRD",
-    "version": (1, 0, 0),
+    "version": (1, 1, 0),
     "blender": (2, 91, 2),
     "location": "View3D > Sidebar > GRD File Importer", 
-    "category": "Object",
-    "support": "COMMUNITY"
+    "category": "Import-Export",
+    "support": "COMMUNITY",
 }
 
 ### IMPORTS
 
 if "bpy" in locals():
     import importlib
-    importlib.reload(grd_importer-ui)
-    importlib.reload(grd_importer-main)
+    importlib.reload(ui)
+    importlib.reload(grd_import)
 else:
     import bpy
-    from . import grd_importer-ui
-    from . import grd_importer-main
+    from . import ui
+    from . import grd_import
 
 ### REG- & UNREGISTRATION 
 
 def register():
-    grd_importer-ui.register()
-    grd_importer-main.register()
+    ui.register()
+    grd_import.register()
 
 def unregister():
-    grd_importer-ui.unregister()
-    grd_importer-main.unregister()
+    ui.unregister()
+    grd_import.unregister()
 
 ### LAUNCH POINT
 
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     try:
         unregister()
     except Exception as e:
-        print(e)
+        print("Exception: " + e)
         pass
 
     register()

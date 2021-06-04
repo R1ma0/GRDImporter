@@ -136,6 +136,3 @@ def register():
 def unregister():
     """ Unregistering Add-on Classes """
     bpy.utils.unregister_class(ImportGRDFile)
-
-if __name__ == "__main__":
-    register()

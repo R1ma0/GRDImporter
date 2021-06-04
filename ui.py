@@ -26,6 +26,3 @@ def register():
 def unregister():
     """ Unregistering Add-on Classes """
     bpy.utils.unregister_class(GRDImporterPanel)
-
-if __name__ == "__main__":
-    register()
